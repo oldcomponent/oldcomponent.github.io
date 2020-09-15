@@ -13,6 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Bundler
+      run: |
+        docker run bundle install --path ${{ github.workspace }}    
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
